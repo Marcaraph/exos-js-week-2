@@ -97,12 +97,12 @@ navBar.addEventListener("dblclick", disabledCss);
 // let img = card.querySelector("img");
 // let textDisabled = card.querySelector(".card-text");
 // let onMouseOver = function() {
-//     if (textDisabled.style.filter === "") {
-//     textDisabled.style.filter = "opacity(0%)";
+//     if (textDisabled.style.opacity === "") {
+//     textDisabled.style.opacity = "0";
 //     img.style.scale = "20%";
 //   }
 //     else {
-//     textDisabled.style.filter = "";
+//     textDisabled.style.opacity = "";
 //     img.style.scale = "";
 //     }
 //   // delete text
