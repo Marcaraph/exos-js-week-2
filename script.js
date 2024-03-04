@@ -168,6 +168,8 @@ leftBtn.addEventListener("click", wtfInverse);
 
 // Exo 9 - VIEW 1/3
 
+// 9.1 - CHANGE WITH A MOUSEOVER
+
 let logo = document.querySelector(".navbar-brand");
 let bodyElement = document.body;
 
@@ -189,13 +191,40 @@ function handleKeyPress(event) {
   }
 }
 
-logo.addEventListener("click", function () {
+logo.addEventListener("mouseover", function () {
   document.addEventListener("keydown", handleKeyPress);
 });
 
+// Exo 9.2 - CHANGE WITH A CLICK
+
+// let logo = document.querySelector(".navbar-brand");
+// let bodyElement = document.body;
+
+// function handleKeyPress(event) {
+//   if (event.key === "a" || event.key === "y" || event.key === "p") {
+//     bodyElement.style.width = "33.3333%";
+//     bodyElement.style.maxWidth = "33.3333%";
+//     if (event.key === "y") {
+//       bodyElement.style.marginLeft = "33.3333%";
+//     } else if (event.key === "p") {
+//       bodyElement.style.marginLeft = "66.6667%";
+//     } else {
+//       bodyElement.style.marginLeft = "";
+//     }
+//   } else if (event.key === "b") {
+//     bodyElement.style.width = "";
+//     bodyElement.style.maxWidth = "";
+//     bodyElement.style.marginLeft = "";
+//   }
+// }
+
+// logo.addEventListener("click", function () {
+//   document.addEventListener("keydown", handleKeyPress);
+// });
+
 // -----------------------------------------------
 
-// Exo 9.2 - SECOND CODE
+// Exo 9.3 - THIRD CODE
 
 // let logo = document.querySelector(".navbar-brand");
 // let bodyElement = document.body;
