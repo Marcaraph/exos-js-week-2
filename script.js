@@ -1,3 +1,5 @@
+// Exo 1 - Footer
+
 let footerClick = document.querySelector("footer");
 let i = 0
 
@@ -9,7 +11,7 @@ function onClickFooter() {
 
 footerClick.addEventListener("click", onClickFooter);
 
-// Hamburger Menu
+// Exo 2 - Hamburger Menu
 
 let menuBtn = document.querySelector(".navbar-toggler");
 let menu = document.getElementById("navbarHeader");
@@ -33,7 +35,7 @@ function menuToggle() {
 menuBtn.addEventListener("click", menuToggle);
 
 
-// Edit red irreversible
+// Exo 3 - Edit red irreversible
 
 let card1 = document.querySelector(".card-body")[0]; 
 let editButton1 = document.querySelector("div div .btn-outline-secondary");
@@ -46,7 +48,7 @@ function redColor() {
 editButton1.addEventListener("click", redColor);
 
 
-// Edit second card to green
+// Exo 4 - Edit second card to green
 
 
 // let secondCard = document.querySelectorAll(".card-body")[1]; 
@@ -69,9 +71,9 @@ function turnGreen() {
 
 editButton2.addEventListener("click", turnGreen);
 
-// DISABLE NAVBAR
+// Exo 5 - DISABLE NAVBAR
 
-let navBar = document.querySelector("header");
+let navBar = document.querySelector(".navbar");
 let link = document.querySelector("link");
 
 function disabledCss() {
@@ -85,37 +87,7 @@ function disabledCss() {
 };
 navBar.addEventListener("dblclick", disabledCss);
 
-// REDUCE CARD
-
-// REDUCE IMG WITHOUT ALTERING CARD DIMENSIONS
-
-// let allCard = document.querySelectorAll(".col-md-4")
-
-
-// allCard.forEach( card => {
-// let viewBtn = card.querySelector(".btn-success");
-// let img = card.querySelector("img");
-// let textDisabled = card.querySelector(".card-text");
-// let onMouseOver = function() {
-//     if (textDisabled.style.opacity === "") {
-//     textDisabled.style.opacity = "0";
-//     img.style.scale = "20%";
-//   }
-//     else {
-//     textDisabled.style.opacity = "";
-//     img.style.scale = "";
-//     }
-//   // delete text
-//   // reduce img to 20%
-//   // keep view & edit buttons
-    
-// };
-// viewBtn.addEventListener("mouseover", onMouseOver);
-// })
-
-// ----------------------------------------------
-
-// REDUCE IMG WITH CARD DIMENSIONS CHANGE
+// Exo 6 - REDUCE CARD
 
 let allCard = document.querySelectorAll(".col-md-4")
 
@@ -141,7 +113,35 @@ let onMouseOver = function() {
 viewBtn.addEventListener("mouseover", onMouseOver);
 })
 
-// COOOOOOOOOOOOOOOOL exo 7 
+// ----------------------------------------------
+
+// Exo 6.2 - REDUCE IMG WITHOUT ALTERING CARD DIMENSIONS
+
+// let allCard = document.querySelectorAll(".col-md-4")
+
+
+// allCard.forEach( card => {
+// let viewBtn = card.querySelector(".btn-success");
+// let img = card.querySelector("img");
+// let textDisabled = card.querySelector(".card-text");
+// let onMouseOver = function() {
+//     if (textDisabled.style.opacity === "") {
+//     textDisabled.style.opacity = "0";
+//     img.style.scale = "20%";
+//   }
+//     else {
+//     textDisabled.style.opacity = "";
+//     img.style.scale = "";
+//     }
+//   // delete text
+//   // reduce img to 20%
+//   // keep view & edit buttons
+    
+// };
+// viewBtn.addEventListener("mouseover", onMouseOver);
+// })
+
+// Exo 7 - CAROUSEL
 
 let rightBtn = document.querySelector("main section div p").childNodes[3];
 let allCard2 = document.getElementsByClassName("row")[1];
@@ -153,7 +153,7 @@ function wtf() {
 
 rightBtn.addEventListener("click", wtf);
 
-// Exo 8
+// Exo 8 - RE-CAROUSEL
 
 let leftBtn = document.querySelector("main section div p a");
 
@@ -165,3 +165,58 @@ function wtfInverse(e) {
 };
 
 leftBtn.addEventListener("click", wtfInverse);
+
+// Exo 9 - VIEW 1/3
+
+let logo = document.querySelector(".navbar-brand");
+let bodyElement = document.body;
+
+function handleKeyPress(event) {
+  if (event.key === "a" || event.key === "y" || event.key === "p") {
+    bodyElement.style.width = "33.3333%";
+    bodyElement.style.maxWidth = "33.3333%";
+    if (event.key === "y") {
+      bodyElement.style.marginLeft = "33.3333%";
+    } else if (event.key === "p") {
+      bodyElement.style.marginLeft = "66.6667%";
+    } else {
+      bodyElement.style.marginLeft = "";
+    }
+  } else if (event.key === "b") {
+    bodyElement.style.width = "";
+    bodyElement.style.maxWidth = "";
+    bodyElement.style.marginLeft = "";
+  }
+}
+
+logo.addEventListener("click", function () {
+  document.addEventListener("keydown", handleKeyPress);
+});
+
+// -----------------------------------------------
+
+// Exo 9.2 - SECOND CODE
+
+// let logo = document.querySelector(".navbar-brand");
+// let bodyElement = document.body;
+
+// logo.addEventListener("click", function() {
+//   bodyElement.addEventListener("keydown", function(event) {
+//     if (event.key === "a") {
+//       bodyElement.style.width = "33.3333%";
+//       bodyElement.style.maxWidth = "33.3333%";
+//     } else if (event.key === "y") {
+//       bodyElement.style.width = "33.3333%";
+//       bodyElement.style.maxWidth = "33.3333%";
+//       bodyElement.style.marginLeft = "33.3333%";
+//     } else if (event.key === "p") {
+//       bodyElement.style.width = "33.3333%";
+//       bodyElement.style.maxWidth = "33.3333%";
+//       bodyElement.style.marginLeft = "66.6667%";
+//     } else if (event.key === "b") {
+//       bodyElement.style.width = "";
+//       bodyElement.style.maxWidth = "";
+//       bodyElement.style.marginLeft = "";
+//     }
+//   });
+// });
