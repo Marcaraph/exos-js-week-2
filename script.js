@@ -89,34 +89,6 @@ navBar.addEventListener("dblclick", disabledCss);
 
 // Exo 6 - REDUCE CARD
 
-let allCard = document.querySelectorAll(".col-md-4")
-
-
-allCard.forEach( card => {
-let viewBtn = card.querySelector(".btn-success");
-let img = card.querySelector("img");
-let textDisabled = card.querySelector(".card-text");
-let onMouseOver = function() {
-    textDisabled.classList.toggle("collapse");
-    if(img.style.scale === ""){
-        img.style.scale = "20%"
-    }
-    else {
-        img.style.scale = ""
-    }
-  
-  // delete text
-  // reduce img to 20%
-  // keep view & edit buttons
-    
-};
-viewBtn.addEventListener("mouseover", onMouseOver);
-})
-
-// ----------------------------------------------
-
-// Exo 6.2 - REDUCE IMG WITHOUT ALTERING CARD DIMENSIONS
-
 // let allCard = document.querySelectorAll(".col-md-4")
 
 
@@ -125,14 +97,14 @@ viewBtn.addEventListener("mouseover", onMouseOver);
 // let img = card.querySelector("img");
 // let textDisabled = card.querySelector(".card-text");
 // let onMouseOver = function() {
-//     if (textDisabled.style.opacity === "") {
-//     textDisabled.style.opacity = "0";
-//     img.style.scale = "20%";
-//   }
-//     else {
-//     textDisabled.style.opacity = "";
-//     img.style.scale = "";
+//     textDisabled.classList.toggle("collapse");
+//     if(img.style.scale === ""){
+//         img.style.scale = "20%"
 //     }
+//     else {
+//         img.style.scale = ""
+//     }
+  
 //   // delete text
 //   // reduce img to 20%
 //   // keep view & edit buttons
@@ -140,6 +112,34 @@ viewBtn.addEventListener("mouseover", onMouseOver);
 // };
 // viewBtn.addEventListener("mouseover", onMouseOver);
 // })
+
+// ----------------------------------------------
+
+// Exo 6.2 - REDUCE IMG WITHOUT ALTERING CARD DIMENSIONS
+
+let allCard = document.querySelectorAll(".col-md-4")
+
+
+allCard.forEach( card => {
+let viewBtn = card.querySelector(".btn-success");
+let img = card.querySelector("img");
+let textDisabled = card.querySelector(".card-text");
+let onMouseOver = function() {
+    if (textDisabled.style.opacity === "") {
+    textDisabled.style.opacity = "0";
+    img.style.scale = "20%";
+  }
+    else {
+    textDisabled.style.opacity = "";
+    img.style.scale = "";
+    }
+  // delete text
+  // reduce img to 20%
+  // keep view & edit buttons
+    
+};
+viewBtn.addEventListener("mouseover", onMouseOver);
+})
 
 // Exo 7 - CAROUSEL
 
@@ -168,12 +168,23 @@ leftBtn.addEventListener("click", wtfInverse);
 
 // Exo 9 - VIEW 1/3
 
-// 9.1 - CHANGE WITH A MOUSEOVER
+// 9.1 - FOURTH CODE WITH HIGHLIGHT
 
-let logo = document.querySelector(".navbar-brand");
-let bodyElement = document.body;
+function isTextHighlight() {
+  let selection = window.getSelection();
+  let selectedText = selection.toString().trim();
+  let strongText = document.querySelector('.navbar-brand strong').innerText.trim();
+
+  if (selectedText === strongText) {
+    document.addEventListener("keypress", handleKeyPress);
+  } else {
+    document.removeEventListener("keypress", handleKeyPress);
+  }
+}
 
 function handleKeyPress(event) {
+  let bodyElement = document.body;
+
   if (event.key === "a" || event.key === "y" || event.key === "p") {
     bodyElement.style.width = "33.3333%";
     bodyElement.style.maxWidth = "33.3333%";
@@ -191,11 +202,36 @@ function handleKeyPress(event) {
   }
 }
 
-logo.addEventListener("mouseover", function () {
-  document.addEventListener("keydown", handleKeyPress);
-});
+document.addEventListener("mouseup", isTextHighlight);
 
-// Exo 9.2 - CHANGE WITH A CLICK
+// 9.2 - CHANGE WITH A MOUSEOVER
+
+// let logo = document.querySelector(".navbar-brand");
+// let bodyElement = document.body;
+
+// function handleKeyPress(event) {
+//   if (event.key === "a" || event.key === "y" || event.key === "p") {
+//     bodyElement.style.width = "33.3333%";
+//     bodyElement.style.maxWidth = "33.3333%";
+//     if (event.key === "y") {
+//       bodyElement.style.marginLeft = "33.3333%";
+//     } else if (event.key === "p") {
+//       bodyElement.style.marginLeft = "66.6667%";
+//     } else {
+//       bodyElement.style.marginLeft = "";
+//     }
+//   } else if (event.key === "b") {
+//     bodyElement.style.width = "";
+//     bodyElement.style.maxWidth = "";
+//     bodyElement.style.marginLeft = "";
+//   }
+// }
+
+// logo.addEventListener("mouseover", function () {
+//   document.addEventListener("keydown", handleKeyPress);
+// });
+
+// Exo 9.3 - CHANGE WITH A CLICK
 
 // let logo = document.querySelector(".navbar-brand");
 // let bodyElement = document.body;
@@ -224,7 +260,7 @@ logo.addEventListener("mouseover", function () {
 
 // -----------------------------------------------
 
-// Exo 9.3 - THIRD CODE
+// Exo 9.4 - THIRD CODE
 
 // let logo = document.querySelector(".navbar-brand");
 // let bodyElement = document.body;
@@ -249,3 +285,4 @@ logo.addEventListener("mouseover", function () {
 //     }
 //   });
 // });
+
