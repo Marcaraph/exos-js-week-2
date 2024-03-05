@@ -168,7 +168,7 @@ leftBtn.addEventListener("click", wtfInverse);
 
 // Exo 9 - VIEW 1/3
 
-// 9.1 - FOURTH CODE WITH HIGHLIGHT
+// 9.1 - CODE WITH HIGHLIGHT
 
 function isTextHighlight() {
   let selection = window.getSelection();
@@ -260,7 +260,7 @@ document.addEventListener("mouseup", isTextHighlight);
 
 // -----------------------------------------------
 
-// Exo 9.4 - THIRD CODE
+// Exo 9.4 - FIRST CODE
 
 // let logo = document.querySelector(".navbar-brand");
 // let bodyElement = document.body;
